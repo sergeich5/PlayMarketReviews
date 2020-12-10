@@ -38,7 +38,7 @@ print("There are "+str(len(reviews))+" reviews avaliable")
 
 with open(outputFileName+'.csv', mode='w') as file:
     writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
-    writer.writerow(["name","ratings","comment"])
+    writer.writerow(["name","rating","comment"])
     for review in reviews:
         try:
             r = review.find_element_by_css_selector('div:first-of-type > div:nth-child(2)')
