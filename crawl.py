@@ -1,6 +1,6 @@
 
 from selenium import webdriver
-from bs4 import BeautifulSoup
+#from bs4 import BeautifulSoup
 from pdb import set_trace as bp ##for testing
 import re
 import time
@@ -42,7 +42,7 @@ with open(outputFileName+'.csv', mode='w') as file:
     for review in reviews:
         #try:
         r = review.find_element_by_css_selector('div:nth-child(1) > div:nth-child(2)')
-        print r.get_attribute("innerHTML")
+        #print r.get_attribute("innerHTML")
         
         #name = r.find_element_by_css_selector('div:nth-child(1) > div:nth-child(1) > span').text
         #print name
