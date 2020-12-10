@@ -7,7 +7,20 @@ import time
 import csv
 outputFileName='result'
 link = "https://play.google.com/store/apps/details?id=io.fusetech.stackademia&hl=ru&showAllReviews=true"
-driver = webdriver.Chrome("./chromedriver")
+
+chromeOptions = webdriver.ChromeOptions() 
+chromeOptions.add_experimental_option("prefs", {"profile.managed_default_content_settings.images": 2}) 
+chromeOptions.add_argument("--no-sandbox") 
+chromeOptions.add_argument("--disable-setuid-sandbox") 
+chromeOptions.add_argument("--disable-dev-shm-using") 
+chromeOptions.add_argument("--disable-extensions") 
+chromeOptions.add_argument("--disable-gpu") 
+chromeOptions.add_argument("start-maximized") 
+chromeOptions.add_argument("disable-infobars") 
+chromeOptions.add_argument("--headless")
+#chromeOptions.add_argument("--remote-debugging-port=9222")  # this
+
+driver = webdriver.Chrome("./chromedriver", chrome_options=chromeOptions)
 driver.get(link)
 
 title = driver.find_element_by_xpath('//h1/span').text
