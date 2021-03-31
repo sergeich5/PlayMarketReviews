@@ -32,7 +32,7 @@ flag=0
 while 1:
     driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
     try:
-        loadMore=driver.find_element_by_xpath("//*[contains(@class,'U26fgb O0WRkf oG5Srb C0oVfc n9lfJ')]").click()
+        loadMore = driver.find_elements_by_css_selector("h3 + div + div > div")[0].click()
     except:
         time.sleep(1)
         flag=flag+1
